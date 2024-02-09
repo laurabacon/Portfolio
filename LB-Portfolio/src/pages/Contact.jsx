@@ -1,15 +1,99 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header'; 
 import Footer from '../components/Footer';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    setEmailError(!validateEmail(e.target.value));
+  };
+
+  const handleBlur = (field) => {
+    if (field === 'name') {
+      setNameError(name === '');
+    }
+    if (field === 'email') {
+      setEmailError(email === '');
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (name === '') {
+      setNameError(true);
+    }
+    if (!validateEmail(email)) {
+      setEmailError(true);
+    }
+    if (name !== '' && validateEmail(email)) {
+    }
+  };
+
+  const validateEmail = (email) => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  };
   return (
     <section id="contact">
       <div>
-      <Header />
-      <h3>Contact</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem necessitatibus facilis sunt, ullam quaerat pariatur a sequi nihil alias cumque dolorum possimus dolor exercitationem labore. Nihil debitis saepe a atque?</p>
-      <Footer />
+        <Header />
+        <h3>Contact</h3>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formName">
+            <Form.Label>Name</Form.Label>
+            <Form.Control 
+              type="text" 
+              placeholder="Your Name" 
+              value={name} 
+              onChange={handleNameChange} 
+              onBlur={() => handleBlur('name')} 
+              isInvalid={nameError} 
+            />
+            <Form.Control.Feedback type="invalid">
+              Name is required.
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control 
+              type="email" 
+              placeholder="name@example.com" 
+              value={email} 
+              onChange={handleEmailChange} 
+              onBlur={() => handleBlur('email')} 
+              isInvalid={emailError} 
+            />
+            <Form.Control.Feedback type="invalid">
+              {emailError ? 'Invalid email address.' : 'Email is required.'}
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formMessage">
+            <Form.Label>Message</Form.Label>
+            <Form.Control 
+              as="textarea" 
+              rows={3} 
+              placeholder="Your Message" 
+              value={message} 
+              onChange={(e) => setMessage(e.target.value)} 
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+        <Footer />
       </div>
     </section>
   );
