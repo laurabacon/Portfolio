@@ -23,7 +23,6 @@ function NavTabs({ setCurrentTab, currentTab }) {
         <Link
           to="/About"
           className={currentPage === '/About' ? 'nav-link active' : 'nav-link'}
-          onClick={() => handleTabChange('About')}
         >
           About
         </Link>
@@ -32,7 +31,6 @@ function NavTabs({ setCurrentTab, currentTab }) {
         <Link
           to="/Portfolio"
           className={currentPage === '/Portfolio' ? 'nav-link active' : 'nav-link'}
-          onClick={() => handleTabChange('Portfolio')}
         >
           Portfolio
         </Link>
@@ -41,7 +39,6 @@ function NavTabs({ setCurrentTab, currentTab }) {
         <Link
           to="/Resume"
           className={currentPage === '/Resume' ? 'nav-link active' : 'nav-link'}
-          onClick={() => handleTabChange('Resume')}
         >
           Resume
         </Link>
