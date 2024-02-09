@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Header';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const HomePage = () => {
+const Home = () => {
   return (
     <div>
       <Header />
@@ -11,4 +11,4 @@ const HomePage = () => {
   );
 }
 
-export default HomePage;
+export default Home;

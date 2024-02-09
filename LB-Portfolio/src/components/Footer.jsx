@@ -21,17 +21,17 @@ const styles = {
     marginRight: '0',
     borderRadius: '100%',
     backgroundColor: '#33353d',
-    color: '#737373',
+    color: '#717171',
     textDecoration: 'none',
   },
   linkHover: {
-    backgroundColor: '#555',
+    backgroundColor: '#f7f8f6',
   },
 };
 
 function Footer() {
     const handleMouseEnter = (event) => {
-        event.target.style.backgroundColor = '#555';
+        event.target.style.backgroundColor = '#f7f8f6';
     };
 
     const handleMouseLeave = (event) => {

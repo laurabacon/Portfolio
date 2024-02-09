@@ -4,7 +4,7 @@ const Resume = () => {
   return (
     <section id="resume">
       <div>
-        <h2>Resume</h2>
+        <h3>Resume</h3>
       </div>
     </section>
   );

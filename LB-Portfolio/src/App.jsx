@@ -1,33 +1,18 @@
-import React, { useState } from 'react';
-import './App.css';
-import Home from './pages/Home'; // Assuming Home component exists
+import { Outlet } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
-  const [currentTab, setCurrentTab] = useState("Home");
-  const renderTab = () => {
-    if (currentTab === "About") {
-      return <About />;
-    }
-    if (currentTab === "Contact") {
-      return <Contact />;
-    }
-    if (currentTab === "Portfolio") {
-      return <Portfolio />;
-    }
-    if (currentTab === "Resume") {
-      return <Resume />;
-    }
-    return <Home />;
-  };
 
   return (
     <>
-      <div>
-        {renderTab()}
-      </div>
+      <main className="mx-3">
+        <Outlet />
+      </main>
     </>
   );
 }
 
 export default App;
+
 
