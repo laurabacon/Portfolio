@@ -10,6 +10,7 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -26,6 +27,9 @@ const Contact = () => {
     }
     if (field === 'email') {
       setEmailError(email === '');
+    }
+    if (field === 'message') { 
+      setMessageError(message === ''); 
     }
   };
 
@@ -87,7 +91,12 @@ const Contact = () => {
               placeholder="Your Message" 
               value={message} 
               onChange={(e) => setMessage(e.target.value)} 
+              onBlur={() => handleBlur('message')} // Add this line
+              isInvalid={messageError} 
             />
+            <Form.Control.Feedback type="invalid">
+              {messageError ? 'Invalid message.' : 'Message is required.'}
+            </Form.Control.Feedback>
           </Form.Group>
           <Button variant="primary" type="submit">
             Submit
