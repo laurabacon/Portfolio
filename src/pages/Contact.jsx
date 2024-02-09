@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../components/Header'; 
-import Footer from '../components/Footer';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -52,7 +50,6 @@ const Contact = () => {
   return (
     <section id="contact">
       <div>
-        <Header />
         <h3>Contact</h3>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formName">
@@ -102,7 +99,6 @@ const Contact = () => {
             Submit
           </Button>
         </Form>
-        <Footer />
       </div>
     </section>
   );

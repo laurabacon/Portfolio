@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from '../components/Header'; 
-import Footer from '../components/Footer';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -30,7 +28,6 @@ const Portfolio = () => {
   return (
     <section id="portfolio">
       <div>
-        <Header />
         <Row xs={1} md={2} className="g-6" style={{ marginBottom: '20px' }}>
           {imageUrls.map((imageUrl, idx) => (
             <Col key={idx}>
@@ -45,7 +42,6 @@ const Portfolio = () => {
             </Col>
           ))}
         </Row>
-        <Footer />
       </div>
     </section>
   );

@@ -1,12 +1,9 @@
 import React from 'react';
-import Header from '../components/Header'; 
-import Footer from '../components/Footer';
 
 const Resume = () => {
   return (
     <section id="resume">
       <div>
-      <Header />
       <h3>Resume</h3>
       <br />
       <h5>Download My Resume: <a href="src/assets/Resume QA Manager.pdf" download="Resume QA Manager.pdf">
@@ -38,7 +35,6 @@ const Resume = () => {
         <li>Webpack</li>
         <li>Gulp</li>
       </ul>
-      <Footer />
       </div>
     </section>
   );
