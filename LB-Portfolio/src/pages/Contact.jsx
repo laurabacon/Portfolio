@@ -5,7 +5,6 @@ const Contact = () => {
     <section id="contact">
       <div>
         <h2>Contact</h2>
-        {/* Insert contact form with fields for name, email, and message */}
       </div>
     </section>
   );
