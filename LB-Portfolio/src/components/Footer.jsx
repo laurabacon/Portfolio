@@ -57,6 +57,8 @@ function Footer() {
         </li>
         <li style={styles.listItem}>
             <a href="https://github.com/laurabacon" style={styles.link} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><i className="footer github"></i>Github</a></li>
+        <li style={styles.listItem}>
+            <a href="https://stackoverflow.com/users/23370908/laura-brown" style={styles.link} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}><i className="footer stack"></i>Stack Overflow</a></li>
       </ul>
     </footer>
   );

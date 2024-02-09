@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-function NavTabs() {
-  const [currentTab, setCurrentTab] = useState("Home");
-  const currentPage = useLocation().pathname;
-
+function NavTabs({ setCurrentTab, currentTab }) {
   const handleTabChange = (tab) => {
     setCurrentTab(tab);
   };
 
+  const currentPage = useLocation().pathname;
+
   return (
     <ul className="nav nav-tabs">
-      <li className="nav-item">
+      {/* <li className="nav-item">
         <Link
           to="/"
           className={currentPage === '/' ? 'nav-link active' : 'nav-link' }
@@ -19,7 +18,7 @@ function NavTabs() {
         >
           Home
         </Link>
-      </li>
+      </li> */}
       <li className="nav-item">
         <Link
           to="/About"
@@ -51,7 +50,6 @@ function NavTabs() {
         <Link
           to="/Contact"
           className={currentPage === '/Contact' ? 'nav-link active' : 'nav-link'}
-          onClick={() => handleTabChange('Contact')}
         >
           Contact
         </Link>
